@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: lemonbasil_development
+
+test:
+  <<: *default
+  database: lemonbasil_test
+
+production:
+  <<: *default
+  database: lemonbasil_production
+  username: lemonbasil
+  password: <%= ENV['LEMONBASIL_DATABASE_PASSWORD'] %>
