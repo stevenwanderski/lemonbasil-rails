@@ -1,0 +1,14 @@
+<h1>Edit Page: <em><%= @page.title %></em></h1>
+
+<%= simple_form_for(["admin", @page]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body unless @page.home? %>
+  <%= f.input :tagline if @page.home? %>
+  <%= f.input :quote if @page.home? %>
+  <%= f.input :quote_author if @page.home? %>
+  <hr>
+  <div class="form-group">
+    <%= f.button :submit %>
+    <%= link_to "Cancel", admin_pages_path, class: "btn" %>
+  </div>
+<% end %>

@@ -7,15 +7,23 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'puma'
 gem 'awesome_print'
-gem 'bootstrap-sass', branch: 'master'
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'simple_form'
 gem 'devise'
-gem 'turbolinks'
+gem "wysiwyg-rails"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'quiet_assets'
   gem 'dotenv-rails'
-  gem 'better_errors'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'faker'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'capybara'
 end
 
 group :production do
