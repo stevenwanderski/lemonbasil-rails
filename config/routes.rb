@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "how-it-works", to: "pages#how_it_works", as: "how_it_works"
   get "about", to: "pages#about", as: "about"
 
+  resources :contacts, only: [:new, :create]
+
   namespace :admin do
     root "pages#index"
     resources :pages

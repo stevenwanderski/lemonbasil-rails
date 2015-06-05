@@ -10,8 +10,10 @@ gem 'awesome_print'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'simple_form'
 gem 'devise'
-gem "wysiwyg-rails"
-gem "font-awesome-rails"
+gem 'wysiwyg-rails'
+gem 'font-awesome-rails'
+gem 'paperclip', '~> 4.2'
+gem 'aws-sdk', '~> 1.6'
 
 group :development, :test do
   gem 'quiet_assets'
