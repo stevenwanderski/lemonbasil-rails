@@ -1,0 +1,30 @@
+<h1>Category: <%= @category.name %></h1>
+<%= link_to "+ New Menu Item", new_admin_category_menu_item_path(category_id: @category.id) %>
+<hr>
+
+<% if @category.menu_items.any? %>
+<div class="alert alert-success sort-success" style="display: none;">Position successfully updated :)</div>
+<div class="alert alert-danger sort-error" style="display: none;">This did't save! Tell a dev please.</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody class="sortable" data-update-url="<%= admin_weights_update_path %>" data-model-name="MenuItem">
+    <% @category.menu_items.each do |menu_item| %>
+    <tr data-id="<%= menu_item.id %>" data-weight="<%= menu_item.weight %>">
+      <td style="width: 30px;"><span class="glyphicon glyphicon-move"></span></td>
+      <td><%= menu_item.name %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_category_menu_item_path(category_id: @category.id, id: menu_item) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  Add some menu items already!
+<% end %>

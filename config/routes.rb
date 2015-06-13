@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     root "pages#index"
     resources :pages
     resources :users
+    resources :categories do
+      resources :menu_items
+    end
+    post "update-weights", to: "weights#update", as: "weights_update"
   end
 end

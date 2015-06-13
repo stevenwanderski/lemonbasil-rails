@@ -2,7 +2,9 @@
  *= require froala_editor.min.css
  *= require froala_style.min.css
  *= require font-awesome
+ *= require jquery-ui/sortable
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "styles";
