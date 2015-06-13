@@ -1,16 +1,20 @@
 <h1>Categories</h1>
 <%= link_to "+ New Category", new_admin_category_path %>
 
+<div class="alert alert-success sort-success" style="display: none;">Position successfully updated :)</div>
+<div class="alert alert-danger sort-error" style="display: none;">This did't save! Tell a dev please.</div>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="sortable" data-update-url="<%= admin_weights_update_path %>" data-model-name="Category">
     <% @categories.each do |category| %>
-    <tr>
+    <tr data-id="<%= category.id %>" data-weight="<%= category.weight %>">
+      <td style="width: 30px;"><span class="glyphicon glyphicon-move"></span></td>
       <td><%= category.name %></td>
       <td>
         <%= link_to "View", admin_category_path(category) %>
