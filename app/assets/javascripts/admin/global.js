@@ -24,4 +24,7 @@ $(function(){
       });
     });
   });
+
+  // Awesome WYSIWYG editor, but too expensive
+  $('a[href="http://editor.froala.com"]').parent().hide();
 });
