@@ -7,3 +7,8 @@
 .glyphicon-move {
   cursor: move;
 }
+
+// Awesome WYSIWYG editor, but too expensive
+a[href="http://editor.froala.com"] {
+  display: none;
+}
