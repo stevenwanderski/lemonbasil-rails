@@ -1,1 +1,1 @@
-web: bundle exec puma
+web: bundle exec puma -w 3 -t 1:8 -p $PORT -e $RACK_ENV
