@@ -1,0 +1,27 @@
+#content {
+  padding: 0 0 50px;
+  color: $dark_gray;
+
+  .image {
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.alert-success {
+  font-size: 24px;
+}
+
+@media (min-width: $screen-sm-min) {
+  #content {
+    .image {
+      img {
+        max-width: 80%;
+        float: left;
+        margin: 0 40px 40px 0;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "how-it-works", to: "pages#how_it_works", as: "how_it_works"
   get "about", to: "pages#about", as: "about"
+  get "menus", to: "pages#menus", as: "menus"
 
   resources :contacts, only: [:new, :create]
 

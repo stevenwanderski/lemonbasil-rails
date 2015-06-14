@@ -33,6 +33,12 @@ class Admin::CategoriesController < AdminController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to admin_categories_path, notice: "Great job! Delete successful."
+  end
+
   private
 
   def category_params

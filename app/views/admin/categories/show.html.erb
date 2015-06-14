@@ -19,6 +19,8 @@
       <td><%= menu_item.name %></td>
       <td>
         <%= link_to "Edit", edit_admin_category_menu_item_path(category_id: @category.id, id: menu_item) %>
+        <%= link_to "Delete", admin_category_menu_item_path(category_id: @category.id, id: menu_item), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %>
+
       </td>
     </tr>
     <% end %>

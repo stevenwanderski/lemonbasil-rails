@@ -1,8 +1,10 @@
 <h1>Edit Page: <em><%= @page.title %></em></h1>
+<p><%= link_to "Back to Pages", admin_pages_path %></p>
+<hr>
 
 <%= simple_form_for(["admin", @page]) do |f| %>
   <%= f.input :title %>
-  <%= f.input :body unless @page.home? %>
+  <%= f.input :body, input_html: { class: "editor" } unless @page.home? %>
   <%= f.input :image, as: :image, input_html: { preview_version: :thumb } unless @page.home? %>
   <%= f.input :tagline if @page.home? %>
   <%= f.input :quote if @page.home? %>

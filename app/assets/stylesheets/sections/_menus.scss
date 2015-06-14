@@ -1,0 +1,36 @@
+.categories-list {
+  margin-bottom: 30px;
+  text-align: left;
+
+  a {
+    color: $orange;
+    font-size: 16px;
+    display: block;
+    padding-bottom: 5px;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.menu-items-list {
+  text-align: left;
+
+  .menu-items {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .menu-item {
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    .name {
+      font-weight: 300;
+    }
+  }
+}

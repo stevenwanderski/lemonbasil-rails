@@ -19,12 +19,18 @@ class Admin::MenuItemsController < AdminController
   end
 
   def update
-    @menu_items = MenuItem.find(params[:id])
-    if @menu_items.update(menu_items_params)
+    @menu_item = MenuItem.find(params[:id])
+    if @menu_item.update(menu_items_params)
       redirect_to admin_category_path(@category), notice: "Great job! Update successful."
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @menu_item = MenuItem.find(params[:id])
+    @menu_item.destroy
+    redirect_to admin_category_path(@category), notice: "Great job! Delete successful."
   end
 
   private

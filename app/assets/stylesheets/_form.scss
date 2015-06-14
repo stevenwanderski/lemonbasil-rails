@@ -1,0 +1,17 @@
+input[type="submit"].btn {
+  border: 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea.form-control {
+  border: solid 1px #ccc;
+}
+
+label {
+  font-weight: 100;
+
+  abbr {
+    display: none;
+  }
+}

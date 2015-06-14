@@ -8,7 +8,8 @@ Page.create([
     }
   },
   { title: "How it Works", body: "", key: "how_it_works" },
-  { title: "About Me", body: "", key: "about" }
+  { title: "About Me", body: "", key: "about" },
+  { title: "Menus", body: "", key: "menus" }
 ])
 
 categories = {

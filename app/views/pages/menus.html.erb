@@ -1,0 +1,37 @@
+<h1><%= @page.title %></h1>
+<% if @page.body.present? %>
+<p><%= @page.body.html_safe %></p>
+<% end %>
+
+<div class="row">
+
+  <div class="col-sm-3 categories-list">
+    <% @categories.each_with_index do |category, index| %>
+    <div class="category-name">
+      <a href="" data-category-id="<%= category.id %>" class="<%= "active" if index === 0 %>"><%= category.name %></a>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-9 menu-items-list">
+    <% @categories.each_with_index do |category, index| %>
+      <div class="menu-items <%= "active" if index === 0 %>" data-category-id="<%= category.id %>">
+      <% category.menu_items.each do |menu_item| %>
+        <div class="menu-item">
+          <div class="name"><%= menu_item.name %></div>
+          <% if menu_item.description.present? %>
+          <div class="description"><%= menu_item.description %></div>
+          <% end %>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<%= javascript_tag do %>
+  $(function(){
+    new Menus();
+  });
+<% end %>
