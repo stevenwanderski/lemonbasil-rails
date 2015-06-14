@@ -1,8 +1,7 @@
 <h1>Categories</h1>
 <%= link_to "+ New Category", new_admin_category_path %>
 
-<div class="alert alert-success sort-success" style="display: none;">Position successfully updated :)</div>
-<div class="alert alert-danger sort-error" style="display: none;">This did't save! Tell a dev please.</div>
+<%= render "admin/shared/sort_flashes" %>
 <table class="table table-striped">
   <thead>
     <tr>
