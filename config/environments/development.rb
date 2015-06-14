@@ -39,7 +39,25 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.middleware.insert_after(ActionDispatch::Static, Rack::LiveReload)
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # This line solves the premailer-rails gem issue #108: https://github.com/fphilipe/premailer-rails/issues/108#issuecomment-62127625
+  config.middleware.delete Rack::Lock
+
+  config.log_level = :debug
+
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.mandrillapp.com',
+  #   port:                 587,
+  #   enable_starttls_auto: true,
+  #   user_name:            ENV['MANDRILL_USERNAME'],
+  #   password:             ENV['MANDRILL_APIKEY'],
+  #   authentication:       'login'
+  # }
+
 end

@@ -6,6 +6,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
+      ContactMailer.new_contact(@contact).deliver_now
       redirect_to new_contact_path, notice: "Thank you! We will chat soon :)"
     else
       render "new"
