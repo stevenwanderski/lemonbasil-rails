@@ -25,19 +25,23 @@ section {
   text-align: center;
 }
 
-.row {
-  text-align: center;
+#content {
+  .home .row {
+    text-align: center;
 
-  .image {
-    margin-bottom: 10px;
+    .image {
+      margin-bottom: 10px;
 
-    img {
-      max-width: 70%;
+      img {
+        float: none;
+        margin: 0;
+        max-width: 70%;
+      }
     }
-  }
 
-  .link {
-    margin-bottom: 40px;
+    .link {
+      margin-bottom: 40px;
+    }
   }
 }
 
@@ -67,11 +71,13 @@ cite {
     }
   }
 
-  .row {
-    margin-bottom: 50px;
+  #content {
+    .home .row {
+      margin-bottom: 50px;
 
-    .image {
-      margin-bottom: 20px;
+      .image {
+        margin-bottom: 20px;
+      }
     }
   }
 }

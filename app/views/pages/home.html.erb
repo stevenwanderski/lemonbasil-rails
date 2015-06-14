@@ -1,24 +1,26 @@
-<div class="hero">
-  <h1><%= @page.title %></h1>
-  <h2><%= @page.tagline %></h2>
-</div>
+<div class="home">
+  <div class="hero">
+    <h1><%= @page.title %></h1>
+    <h2><%= @page.tagline %></h2>
+  </div>
 
-<div class="row">
-  <div class="col-sm-4">
-    <div class="image"><%= image_tag @how_it_works.image.url %></div>
-    <div class="link"><%= link_to "How it works", how_it_works_path, class: "btn" %></div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="image"><%= image_tag @how_it_works.image.url %></div>
+      <div class="link"><%= link_to "How it works", how_it_works_path, class: "btn" %></div>
+    </div>
+    <div class="col-sm-4">
+      <div class="image"><%= image_tag @about.image.url %></div>
+      <div class="link"><%= link_to "About me", about_path, class: "btn" %></div>
+    </div>
+    <div class="col-sm-4">
+      <div class="image"><%= image_tag @menus.image.url %></div>
+      <div class="link"><%= link_to "View menus", menus_path, class: "btn" %></div>
+    </div>
   </div>
-  <div class="col-sm-4">
-    <div class="image"><%= image_tag @about.image.url %></div>
-    <div class="link"><%= link_to "About me", about_path, class: "btn" %></div>
-  </div>
-  <div class="col-sm-4">
-    <div class="image"><%= image_tag @menus.image.url %></div>
-    <div class="link"><%= link_to "View menus", menus_path, class: "btn" %></div>
-  </div>
-</div>
 
-<section>
-  <q><%= @page.quote %></q>
-  <cite><%= @page.quote_author %></cite>
-</section>
+  <section>
+    <q><%= @page.quote %></q>
+    <cite><%= @page.quote_author %></cite>
+  </section>
+</div>
