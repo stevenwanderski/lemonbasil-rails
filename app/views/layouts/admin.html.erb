@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lemon &amp; Basil Admin</title>
-  <link rel="shortcut icon" href="/favicon.ico?v=1.1">
+  <link rel="shortcut icon" href="/favicon.png?v=1.2">
+  <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,500|Glass+Antiqua:100,200,300,400" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag 'admin' %>
   <%= javascript_include_tag 'admin' %>
   <%= csrf_meta_tags %>
@@ -22,7 +23,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/admin">lemon&amp;basil</a>
+      <a class="navbar-brand" href="/admin">
+        <span class="green">lemon</span><span class="yellow">&amp;</span><span class="green">basil</span>
+      </a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -32,6 +35,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text"><%= current_user.email %></p></li>
         <li><%= link_to "Logout", destroy_user_session_path %></li>
       </ul>
     </div>
